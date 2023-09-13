@@ -1,96 +1,84 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        {// Task 1
-            int accumulation = 0;
-            int money = 15000;
-            int month = 0;
-            while (accumulation < 2_459_000) {
-                accumulation += money;
-                month += 1;
-                System.out.println("Месяц, " + month + " сумма накоплений равна " + accumulation + " рублей");
-            }
-        }
+        {
+            //Task 1
+            int [] numbers = new int []{1, 2, 3};
 
-        {// Task 2
-            int i = 0;
-            while (i < 10) {
-                i++;
-                System.out.print(" " + i);
+            double[] fractional = {1.57, 7.654, 9.986};
+
+            int[] numberOfHomeworks = {1, 2, 3, 4, 5, 6, 7};
+
+            //Task2
+
+            for (int i = 0; i < numbers.length; i++) {
+                System.out.print(numbers[i]);
+                if (i != numbers.length - 1) {
+                    System.out.print(",");
+                }
             }
             System.out.println();
-            for (i = 10; i > 0; i--) {
-                System.out.print(" " + i);
-            }
-        }
 
-        {// Task 3
+            for (int i = 0; i < fractional.length; i++) {
+                System.out.print(fractional[i]);
+                if (i != fractional.length - 1) {
+                    System.out.print(",");
+                }
+            }
+
             System.out.println();
-            int country = 12_000_000;
-            int born = 17;
-            int die = 8;
-            int koeficient = 1000;
-            int plusPeopleInYear = (country / koeficient) * (born - die);
-            int year = 2023;
-            while (year < 2033) {
-                year++;
-                country += plusPeopleInYear;
-                System.out.println("Год " + year + ", численность населения составляет " + country);
-            }
-        }
 
-        {// Task 4 тут только через long получается норм число через double выдает фигню
-            long accumulation = 15000;
-            int month = 0;
-            double bankPercent = 0.07;
-            while (accumulation < 12_000_000) {
-                accumulation += accumulation * bankPercent;
-                month++;
-                System.out.println("Месяц, " + month + " сумма накоплений равна " + accumulation + " рублей");
-            }
-        }
-        {//Task 5
-            long accumulation = 15000;
-            int month = 0;
-            double bankPercent = 0.07;
-            while (accumulation < 12_000_000) {
-                accumulation += accumulation * bankPercent;
-                month++;
-                if(month % 6 == 0){
-                    System.out.println("Месяц, " + month + " сумма накоплений равна " + accumulation + " рублей");
-                }
-            }
-        }
-
-        {//Task 6
-            long accumulation = 15000;
-            int month = 0;
-            double bankPercent = 0.07;
-            int needTerm = 12*9;
-            while (needTerm != month) {
-                accumulation += accumulation * bankPercent;
-                month++;
-                if(month % 6 == 0){
-                    System.out.println("Месяц, " + month + " сумма накоплений равна " + accumulation + " рублей");
+            for (int i = 0; i < numberOfHomeworks.length; i++) {
+                System.out.print(numberOfHomeworks[i]);
+                if (i != numberOfHomeworks.length - 1) {
+                    System.out.print(",");
                 }
             }
 
-        }
+            //Task 3
 
-        {//Task 7
-            int firstFriday = 1;
-            for(int number = firstFriday; number<31;number+=7){
-                System.out.println("Сегодня пятница " + number + " число");
-            }
-        }
+            System.out.println();
 
-        {//Task 8
-            for (int i = 1823; i < 2123; i++) {
-                if (i % 79 == 0) {
-                    System.out.println(i);
+            for (int i = numbers.length - 1; i >= 0; i--) {
+                System.out.print(numbers[i]);
+                if (i != 0) {
+                    System.out.print(",");
                 }
             }
-        }
+            System.out.println();
 
+            for (int i = fractional.length - 1; i >= 0; i--) {
+                System.out.print(fractional[i]);
+                if (i != 0) {
+                    System.out.print(",");
+                }
+            }
+
+            System.out.println();
+
+            for (int i = numberOfHomeworks.length - 1; i >= 0; i--) {
+                System.out.print(numberOfHomeworks[i]);
+                if (i != 0) {
+                    System.out.print(",");
+                }
+            }
+
+            System.out.println();
+
+            //Task 4
+
+            for (int i = 0; i < numbers.length; i++) {
+                if(numbers[i] % 2 != 0 ) {
+                    numbers[i] += 1;
+                }
+            }
+
+            System.out.println(Arrays.toString(numbers));
+
+
+
+        }
 
 
     }
